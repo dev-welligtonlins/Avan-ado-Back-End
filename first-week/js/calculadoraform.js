@@ -1,7 +1,8 @@
-const formData = new FormData(document.querySelector('calculadoraform'))
-const inputValue1 = formData.get("num1")
-const inputValue2 = formData.get("num2")
+const formData = new FormData(document.querySelector('calculadoraform.js'))
+const n1 = formData.get("n1")
+const n2 = formData.get("n2")
 
-console.log(inputValue1)
+const resultado = parseInt(n1.value) + parseInt(n2.value)
+console.log(resultado)
 
 console.log(typeof inputValue1)
