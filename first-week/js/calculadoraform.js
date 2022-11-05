@@ -1,7 +1,9 @@
-const formData = new FormData(document.querySelector('calculadoraform'))
-const inputValue1 = formData.get("num1")
-const inputValue2 = formData.get("num2")
 
-console.log(inputValue1)
+function sum(){
+    const formData = new FormData(document.querySelector('form'))
+    const n1 = formData.get('n1')
+    const n2 = formData.get('n2')
 
-console.log(typeof inputValue1)
+    console.log(n1+' '+n2)
+
+}

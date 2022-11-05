@@ -8,8 +8,8 @@ console.warn('Alerta: risco')
 
 
 //variáveis
-const name = 'welligton'
-console.log(name)
+const nam = 'welligton'
+console.log(nam)
 
 let x = 10
 if(true){
@@ -95,3 +95,76 @@ console.log(chars)
 
 chars.unshift('B')
 console.log(chars)
+
+
+//object literals
+
+const product = {
+    name: 'Camisa',
+    price: 29.99,
+    inStock: true,
+    size: ['p', 'g', 'm'],
+    'main color': 'red'
+}
+
+console.log(product.price)
+console.log(product['price'])
+console.log(product['main color'])
+
+//destructuring - desustruturação
+let { name, price } = product
+console.log(price)
+price = 1
+console.log(price)
+
+const vector = [3,2,7,45,99]
+let [ v1, v2, ...otherVetor] = vector
+console.log(otherVetor)
+
+
+//JSON - JAVASCRIPT OBJECT NOTATION
+
+//criando objeto
+const dog = {
+    name: 'Scooby',
+    age: 10
+}
+
+console.log(dog)
+const dogJson = JSON.stringify(dog)
+console.log(dogJson)
+const dogObject = JSON.parse(dogJson)
+console.log(dogObject)
+
+const jsonErrado = '{"name" : "welligton", "numero" : "12", "idade" : "22"}'
+const jsonErradoObject = JSON.parse(jsonErrado)
+
+//template literals
+const numeros = [1, 2, 3, 4, 5]
+
+const numerosObj = {
+    n1: numeros[0],
+    n2: numeros[1],
+    n3: numeros[2],
+    n4: numeros[3],
+    n5: numeros[4]
+} 
+
+
+console.log(numerosObj)
+
+let { n1, n2, n3, n4, n5} = numerosObj
+
+let json = JSON.stringify({n1, n2, n3, n4, n5})
+console.log(json)
+
+const numerosObj2 = {
+    'numero 1': n1,
+    'numero 2': n2,
+    'numero 3': n3,
+    'numero 4': n4,
+    'numero 5': n5,
+} 
+const jsonNumeros = JSON.stringify(numerosObj2)
+
+console.log(jsonNumeros)
