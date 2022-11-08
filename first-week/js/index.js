@@ -1,5 +1,5 @@
+/*
 //Overview de JavaScript
-
 
 //console
 console.log("texto dentro de um log.")
@@ -112,6 +112,7 @@ console.log(product['price'])
 console.log(product['main color'])
 
 //destructuring - desustruturação
+
 let { name, price } = product
 console.log(price)
 price = 1
@@ -125,6 +126,7 @@ console.log(otherVetor)
 //JSON - JAVASCRIPT OBJECT NOTATION
 
 //criando objeto
+
 const dog = {
     name: 'Scooby',
     age: 10
@@ -140,6 +142,8 @@ const jsonErrado = '{"name" : "welligton", "numero" : "12", "idade" : "22"}'
 const jsonErradoObject = JSON.parse(jsonErrado)
 
 //template literals
+
+//////////////////////////////////////////////////////////////////////////////////////
 const numeros = [1, 2, 3, 4, 5]
 
 const numerosObj = {
@@ -168,3 +172,78 @@ const numerosObj2 = {
 const jsonNumeros = JSON.stringify(numerosObj2)
 
 console.log(jsonNumeros)
+
+
+
+/////////////////////////////////////////////////////
+
+const num1 =10
+const num2 =20
+
+const calc = {
+    soma: num1+num2,
+    sub: num1-num2,
+    mult: num1*num2,
+    div: num1/num2
+}
+console.log(JSON.stringify(calc))
+
+const a = 5
+const b = 10
+const out = `Quinze é ${(a+b)} \ne não ${(2*a+b)}.`
+console.log(out)
+
+//metodos de arrays
+
+const names = ['welligton', 'priscila', 'yuri', 'Ana']
+
+names.forEach(function(name){
+    console.log(name)
+})
+
+const modifiedNames = names.map(function(nameAlter){
+    if(nameAlter == 'Ana')
+        return ('Beatriz')
+    else
+        return nameAlter
+})
+
+modifiedNames.forEach(function(name){
+    console.log(name)
+})
+
+const numArray = [12, 34, 76, 45, 100, 19, 37, 52].filter(function(num){
+    if(num < 50)
+        return num
+})
+
+numArray.forEach(function(num){
+    console.log(num)
+})
+
+const sumArray = numArray.reduce(function(num1, num2){
+    return num1+num2
+})
+console.log(sumArray)
+*/
+// funções
+
+function myFunction(name, surname){
+    return `O nome completo é: ${name} ${surname}.`
+}
+
+console.log(myFunction('welligton', 'lins'))
+
+//arrow function === função anônima
+// =>  fetch: estudar para amanha
+
+const myArrowFunction = (a, b) => a+b
+
+console.log(myArrowFunction(3, 9))
+
+const ativ = (x) => () => x + 5
+
+console.log(ativ(6)())
+
+() => ( (x=7) => (x+5) )
+
