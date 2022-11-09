@@ -194,7 +194,7 @@ const out = `Quinze é ${(a+b)} \ne não ${(2*a+b)}.`
 console.log(out)
 
 //metodos de arrays
-
+*/
 const names = ['welligton', 'priscila', 'yuri', 'Ana']
 
 names.forEach(function(name){
@@ -225,7 +225,7 @@ const sumArray = numArray.reduce(function(num1, num2){
     return num1+num2
 })
 console.log(sumArray)
-*/
+
 // funções
 
 function myFunction(name, surname){
@@ -245,5 +245,91 @@ const ativ = (x) => () => x + 5
 
 console.log(ativ(6)())
 
-() => ( (x=7) => (x+5) )
+//() => ( (x=7) => (x+5) )
 
+
+const testArrow = () => ((x=7), ()=>(x+5)) ()
+console.log(testArrow())
+
+const namesLength = names.map( ({ length }) => length )
+console.log(namesLength)
+
+//closures
+function out(){
+    let varX = 50
+    function sumXand5(){
+        return varX+5
+    }
+    return sumXand5()
+} 
+console.log(out())
+
+//orientação objeto 
+
+class Product{
+    constructor(name, price){
+        this.name = name
+        this.price = price
+    }
+
+    productDetails(){
+        return `O nome do produto é ${this.name} e o preço é ${this.price}.`
+    }
+
+    static test(){
+        console.log('testando método estático...')
+    }
+}
+
+// instancia do objeto
+const shirt = new Product('NIKE OLD.JS', 19.99)
+console.log(shirt.productDetails())
+
+const sock = new Product('Meião Preto', 9.94)
+console.log(sock.productDetails())
+Product.test()
+
+
+// herança
+
+class Tenis extends Product {
+    constructor(name, price, size){
+        super(name, price)
+        this.size = size
+    }
+
+    showNumber(){
+        return `O tamanho do ${this.name} é ${this.size}`
+    }
+
+    productDetails(){
+        return `O nome do produto é ${this.name} e no tamanho ${this.size} o preço é $${this.price}.`
+    }
+}
+
+const tenis = new Tenis('all start', 120.99, '42')
+console.log(tenis.showNumber())
+console.log(tenis.productDetails())
+
+//DOM - document object model
+
+console.log(document.getElementById('titulo'))
+console.log(document.getElementsByClassName('text'))
+
+
+const texts = document.querySelectorAll('.text')
+console.log(texts)
+
+texts.forEach((data) => console.log(data))
+
+
+texts[0].textContent = 'estou alterando o primeiro parágrafo'
+
+texts[0].innerHTML = '<span>Testando uma altereção </span>'
+
+texts[1].style.backgroundColor = 'red'
+
+texts[2].remove()
+
+const button = document.querySelector('#btn')
+button.addEventListener('click', () => (texts[3].style.backgroundColor='orange'))
