@@ -39,6 +39,7 @@ setInterval( () => {
     console.log('++++++++ MEMORY STATS ++++++++')
     console.table(stats)
     
+    //  recebe as informações e escreve em um arquivo - logger.js
     log('Rodando...', JSON.stringify(stats))
 
 }, 1000 )
